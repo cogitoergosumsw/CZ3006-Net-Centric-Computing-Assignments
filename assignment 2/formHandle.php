@@ -10,9 +10,31 @@
 
 <body>
 <?php
+    // declare the file name
+    $file_name = "order.txt";
+
+    $total_apples = 0;
+    $total_oranges = 0;
+    $total_bananas = 0;
+
     // open file on server
     // throw exception when there's an error opening the file
-    $file = fopen("order.txt", "c+") or die ("Error opening file!")
+    $file = fopen($file_name, "c+") or die ("Error opening file!");
+
+    // read data in the file
+    $file_data = file_get_contents($file_name);
+
+    // check if the file contains any data
+    if ($file_data != "") {
+        // match the values of the number of apples, oranges and bananas correspondingly
+        preg_match("/Total number of apples: (\d+)/", $file_data, $num_apples);
+        preg_match("/Total number of oranges: (\d+)/", $file_data, $num_oranges);
+        preg_match("/Total number of bananas: (\d+)/", $file_data, $num_bananas);
+
+        $total_apples = intval($num_apples[1]);
+        $total_oranges = intval($num_oranges[1]);
+        $total_bananas = intval($num_bananas[1]);
+    }
 ?>
 <div class="ui hidden divider"></div>
 <div class="ui container">
