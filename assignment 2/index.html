@@ -61,11 +61,12 @@
 </div>
 <!--end of header-->
 
+<div class="ui hidden divider"></div>
+
 <!--start of main body - fulfilling requirements-->
 <form class="ui form" action="formHandle.php" method="post">
-    <div class="ui two column stackable grid">
-
-        <div class="ten wide column" id="fruits-selection">
+    <div class="ui container">
+        <div class="ui row">
             <!--start of keying in user name-->
             <div class="ui raised green padded center aligned segment">
                 <div class="ui icon header">
@@ -74,128 +75,143 @@
                 </div>
                 <div class="inline">
                     <div class="ui input focus">
-                        <input type="text" placeholder="John Doe" name= "user" value="John Doe" required>
+                        <input type="text" placeholder="John Doe" name="user" value="John Doe" required>
                     </div>
                 </div>
             </div>
             <!--end of keying in user name-->
-
-            <!--start of keying in num. of apples-->
-            <div class="ui raised red padded center aligned segment">
-                <div class="ui icon header">
-                    <img src="styles/icons/apple.png" alt="Apples">
-                    <br>
-                    Please input number of Apples
-                    <br>
-                    <span class="ui sub header">69¢ each</span>
-                </div>
-                <div class="inline">
-                    <div class="ui input focus">
-                        <div class="field">
-                            <div class="ui pointing below red basic label" id="apples-error" required>
-                                Please enter a valid numeric value! e.g 1,2,3...
-                            </div>
-                            <input type="text" placeholder="10" name="apples-input" id="apples-input">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--end of keying in num. of apples-->
-
-            <!--start of keying in num. of oranges-->
-            <div class="ui raised orange padded center aligned segment">
-                <div class="ui icon header">
-                    <img src="styles/icons/orange.png" alt="Oranges">
-                    <br>
-                    Please input number of Oranges
-                    <br>
-                    <span class="ui sub header">59¢ each</span>
-                </div>
-                <div class="inline">
-                    <div class="ui input focus">
-                        <div class="field">
-                            <div class="ui pointing below red basic label" id="oranges-error">
-                                Please enter a valid numeric value! e.g 1,2,3...
-                            </div>
-                            <input type="text" placeholder="10" name="oranges-input" id="oranges-input" required>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--end of keying in num. of oranges-->
-
-            <!--start of keying in num. of bananas-->
-            <div class="ui raised yellow padded center aligned segment">
-                <div class="ui icon header">
-                    <img src="styles/icons/banana.png" alt="Bananas">
-                    <br>
-                    Please input number of Bananas
-                    <br>
-                    <span class="ui sub header">39¢ each</span>
-                </div>
-                <div class="inline">
-                    <div class="ui input focus">
-                        <div class="field">
-                            <div class="ui pointing below red basic label" id="bananas-error">
-                                Please enter a valid numeric value! e.g 1,2,3...
-                            </div>
-                            <input type="text" placeholder="10" name="bananas-input" id="bananas-input" required>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <!--end of keying in num. of bananas-->
         </div>
-        <!--start of showing total cost-->
-        <div class="six wide column">
-            <div class="ui rail">
-                <div class="ui sticky">
-                    <div class="ui stacked center aligned placeholder blue segment">
+
+        <div class="ui row">
+            <div class="ui three column stackable grid">
+                <!--start of keying in num. of apples-->
+                <div class="column">
+                    <div class="ui raised red padded center aligned segment">
                         <div class="ui icon header">
-                            <i class="money bill alternate outline icon"></i>
-                            Total Cost:
+                            <img src="styles/icons/apple.png" alt="Apples">
+                            <br>
+                            Please input number of Apples
+                            <br>
+                            <span class="ui sub header">69¢ each</span>
                         </div>
                         <div class="inline">
-                            <div class="ui right labeled input">
-                                <label for="total-cost" class="ui label">$</label>
-                                <input type="text" placeholder="0" name="total-cost" id="total-cost">
+                            <div class="ui input focus">
+                                <div class="field">
+                                    <div class="ui pointing below red basic label" id="apples-error" required>
+                                        Please enter a valid numeric value! e.g 1,2,3...
+                                    </div>
+                                    <input type="text" placeholder="10" name="apples-input" id="apples-input">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!--end of showing total cost-->
-    </div>
-    <div class="ui divider"></div>
 
-    <div class="ui segment">
-        <h2 class="ui left floated header">Payment</h2>
-        <div class="ui clearing divider"></div>
-        <div class="inline fields">
-            <label>Payment Method</label>
-            <div class="field">
-                <div class="ui radio checkbox">
-                    <input type="radio" value="Visa" name="payment" checked="checked" id="visa">
-                    <label>Visa</label>
+                <!--end of keying in num. of apples-->
+                <div class="ui vertical divider">
+
                 </div>
-            </div>
-            <div class="field">
-                <div class="ui radio checkbox">
-                    <input type="radio" value="Mastercard" name="payment" id="mastercard">
-                    <label>Mastercard</label>
+                <!--start of keying in num. of oranges-->
+                <div class="column">
+                    <div class="ui raised orange padded center aligned segment">
+                        <div class="ui icon header">
+                            <img src="styles/icons/orange.png" alt="Oranges">
+                            <br>
+                            Please input number of Oranges
+                            <br>
+                            <span class="ui sub header">59¢ each</span>
+                        </div>
+                        <div class="inline">
+                            <div class="ui input focus">
+                                <div class="field">
+                                    <div class="ui pointing below red basic label" id="oranges-error">
+                                        Please enter a valid numeric value! e.g 1,2,3...
+                                    </div>
+                                    <input type="text" placeholder="10" name="oranges-input" id="oranges-input"
+                                           required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <!--end of keying in num. of oranges-->
+                <div class="ui vertical divider">
+
+                </div>
+                <!--start of keying in num. of bananas-->
+                <div class="column">
+                    <div class="ui raised yellow padded center aligned segment">
+                        <div class="ui icon header">
+                            <img src="styles/icons/banana.png" alt="Bananas">
+                            <br>
+                            Please input number of Bananas
+                            <br>
+                            <span class="ui sub header">39¢ each</span>
+                        </div>
+                        <div class="inline">
+                            <div class="ui input focus">
+                                <div class="field">
+                                    <div class="ui pointing below red basic label" id="bananas-error">
+                                        Please enter a valid numeric value! e.g 1,2,3...
+                                    </div>
+                                    <input type="text" placeholder="10" name="bananas-input" id="bananas-input"
+                                           required>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end of keying in num. of bananas-->
             </div>
-            <div class="field">
-                <div class="ui radio checkbox">
-                    <input type="radio" value="Discover" name="payment" id="discover">
-                    <label>Discover</label>
+        </div>
+        <!--start of showing total cost-->
+        <div class="ui stacked center aligned placeholder blue segment">
+            <div class="ui icon header">
+                <i class="money bill alternate outline icon"></i>
+                Total Cost:
+            </div>
+            <div class="inline">
+                <div class="ui right labeled input">
+                    <label for="total-cost" class="ui label">$</label>
+                    <input type="text" placeholder="0" name="total-cost" id="total-cost">
                 </div>
             </div>
         </div>
-        <button class="ui button" type="submit" name="submitButton" id="submitButton">Submit</button>
+
+        <!--end of showing total cost-->
+        <div class="ui divider"></div>
+
+
+        <div class="ui segment">
+            <h2 class="ui left floated header">Payment</h2>
+            <div class="ui clearing divider"></div>
+            <div class="inline fields">
+                <label>Payment Method</label>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" value="Visa" name="payment" checked="checked" id="visa">
+                        <label>Visa</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" value="Mastercard" name="payment" id="mastercard">
+                        <label>Mastercard</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" value="Discover" name="payment" id="discover">
+                        <label>Discover</label>
+                    </div>
+                </div>
+            </div>
+            <button class="ui button" type="submit" name="submitButton" id="submitButton">Submit</button>
+        </div>
     </div>
+
 </form>
 
 <!--<div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a-->
