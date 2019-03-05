@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CZ3006 Net Centric Computing Assignment 2</title>
+    <link rel="stylesheet" type="text/css" href="styles/semantic-css/semantic.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+<!--main part of frontend coding-->
+
+<!--start of header-->
+<div class="ui two column stackable grid">
+    <div class="ten wide column">
+        <div class="ui raised very black padded text container segment">
+            <h2 class="ui header">
+                <img src="images/ntu_logo.jpg" class="ui stylised-logo circular image">
+                CZ3006 Net Centric Computing
+            </h2>
+            <div class="ui breadcrumb">
+                <div class="section">Nanyang Technological University</div>
+                <div class="divider"> /</div>
+                <div class="section">SCSE</div>
+                <div class="divider"> /</div>
+                <div class="section">AY18/19</div>
+                <div class="divider"> /</div>
+                <div class="section">CZ3006</div>
+                <div class="divider"> /</div>
+                <div class="active section">Assignment 2</div>
+            </div>
+            <p></p>
+        </div>
+    </div>
+
+    <div class="six wide column">
+        <div class="ui raised blue compact text container segment">
+            <div class="row">
+                <h2 class="ui sub header">
+                    Done by:
+                </h2>
+            </div>
+            <div class="row">
+                <div class="ui horizontal list">
+                    <div class="item">
+                        <img class="ui mini circular image" src="images/mugshot.jpg">
+                        <div class="content">
+                            <div class="ui sub header">WONG SENG WEE</div>
+                            U1620607H <br>
+                            TS5
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end of header-->
+
+<!--start of main body - fulfilling requirements-->
+<form class="ui form">
+    <div class="ui two column stackable grid">
+        <div class="ten wide column" id="fruits-selection">
+            <!--start of keying in user name-->
+            <div class="ui raised green padded center aligned segment">
+                <div class="ui icon header">
+                    <i class="user icon"></i>
+                    Please input user's name
+                </div>
+                <div class="inline">
+                    <div class="ui input focus">
+                        <input type="text" placeholder="John Doe" value="John Doe" required>
+                    </div>
+                </div>
+            </div>
+            <!--end of keying in user name-->
+
+            <!--start of keying in num. of apples-->
+            <div class="ui raised red padded center aligned segment">
+                <div class="ui icon header">
+                    <img src="styles/icons/apple.png" alt="Apples">
+                    <br>
+                    Please input number of Apples
+                    <br>
+                    <span class="ui sub header">69¢ each</span>
+                </div>
+                <div class="inline">
+                    <div class="ui input focus">
+                        <div class="field">
+                            <div class="ui pointing below red basic label" id="apples-error" required>
+                                Please enter a numeric value! e.g 1,2,3...
+                            </div>
+                            <input type="text" placeholder="10" id="apples-input">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end of keying in num. of apples-->
+
+            <!--start of keying in num. of oranges-->
+            <div class="ui raised orange padded center aligned segment">
+                <div class="ui icon header">
+                    <img src="styles/icons/orange.png" alt="Oranges">
+                    <br>
+                    Please input number of Oranges
+                    <br>
+                    <span class="ui sub header">59¢ each</span>
+                </div>
+                <div class="inline">
+                    <div class="ui input focus">
+                        <div class="field">
+                            <div class="ui pointing below red basic label" id="oranges-error">
+                                Please enter a numeric value! e.g 1,2,3...
+                            </div>
+                            <input type="text" placeholder="10" id="oranges-input" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end of keying in num. of oranges-->
+
+            <!--start of keying in num. of bananas-->
+            <div class="ui raised yellow padded center aligned segment">
+                <div class="ui icon header">
+                    <img src="styles/icons/banana.png" alt="Bananas">
+                    <br>
+                    Please input number of Bananas
+                    <br>
+                    <span class="ui sub header">39¢ each</span>
+                </div>
+                <div class="inline">
+                    <div class="ui input focus">
+                        <div class="field">
+                            <div class="ui pointing below red basic label" id="bananas-error">
+                                Please enter a numeric value! e.g 1,2,3...
+                            </div>
+                            <input type="text" placeholder="10" id="bananas-input" required>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!--end of keying in num. of bananas-->
+        </div>
+        <!--start of showing total cost-->
+        <div class="six wide column">
+            <div class="ui rail">
+                <div class="ui sticky">
+                    <div class="ui stacked center aligned placeholder blue segment">
+                        <div class="ui icon header">
+                            <i class="money bill alternate outline icon"></i>
+                            Total Cost:
+                        </div>
+                        <div class="inline">
+                            <div class="ui input">
+                                <input type="text" placeholder="0">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="ui stacked center aligned placeholder blue segment">-->
+            <!--<div class="ui icon header">-->
+            <!--<i class="money bill alternate outline icon"></i>-->
+            <!--Total Cost:-->
+            <!--</div>-->
+            <!--<div class="inline">-->
+            <!--<div class="ui input">-->
+            <!--<input type="text" placeholder="0">-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+        </div>
+        <!--end of showing total cost-->
+    </div>
+    <div class="ui divider"></div>
+
+    <div class="ui segment">
+        <h2 class="ui left floated header">Payment</h2>
+        <div class="ui clearing divider"></div>
+        <div class="inline fields">
+            <label>Payment Method</label>
+            <div class="field">
+                <div class="ui radio checkbox">
+                    <input type="radio" name="frequency" checked="checked">
+                    <label>Visa</label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="ui radio checkbox">
+                    <input type="radio" name="frequency">
+                    <label>Mastercard</label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="ui radio checkbox">
+                    <input type="radio" name="frequency">
+                    <label>Discover</label>
+                </div>
+            </div>
+        </div>
+        <button class="ui button" type="submit">Submit</button>
+</form>
+</div>
+
+<!--<div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a-->
+<!--href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a-->
+<!--href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>-->
+<!--</div>-->
+<!--end of frontend coding-->
+<!--scripts to enable beautiful formatting of the website-->
+<script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+<script src="styles/semantic-css/semantic.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
