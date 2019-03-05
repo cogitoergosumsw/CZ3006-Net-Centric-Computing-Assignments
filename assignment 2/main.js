@@ -25,35 +25,55 @@ $(document).ready(function () {
     $('#oranges-error').hide();
     $('#bananas-error').hide();
 
-    // $('total-cost').contentEditable = "false";
-    totalCost.contentEditable = "false";
-
     applesInput.addEventListener("input", function (evt) {
         if (isNaN(this.value)) {
             $('#apples-error').show();
+            totalCost.value = "NaN";
         } else {
-            total = total + (this.value) * appleCost;
+            total = ((this.value) * appleCost) + (orangesInput.value * orangeCost) + (bananasInput.value * bananaCost);
+            total = parseFloat(total).toFixed(2);
+            if (!isNaN(orangesInput.value) && !isNaN(bananasInput.value)) {
+                totalCost.value = total;
+            }
             $('#apples-error').hide();
         }
     });
     orangesInput.addEventListener("input", function (evt) {
         if (isNaN(this.value)) {
+            totalCost.value = "NaN";
             $('#oranges-error').show();
         } else {
-            total = total + (this.value) * orangeCost;
+            total = ((this.value) * orangeCost) + (applesInput.value * appleCost) + (bananasInput.value * bananaCost);
+            total = parseFloat(total).toFixed(2);
+            if (!isNaN(applesInput.value) && !isNaN(bananasInput.value)) {
+                totalCost.value = total;
+            }
             $('#oranges-error').hide();
         }
     });
     bananasInput.addEventListener("input", function (evt) {
         if (isNaN(this.value)) {
+            totalCost.value = "NaN";
             $('#bananas-error').show();
         } else {
-            total = total + (this.value) * bananaCost;
+            total = ((this.value) * bananaCost) + (orangesInput.value * orangeCost) + (applesInput.value * appleCost);
+            total = parseFloat(total).toFixed(2);
+            if (!isNaN(orangesInput.value) && !isNaN(applesInput.value)) {
+                totalCost.value = total;
+                console.log("total:" + total);
+            }
             $('#bananas-error').hide();
         }
     });
 
+    // blur the Total Cost text input field whenever it got focused
     totalCost.addEventListener("focus", function (evt) {
-        document.getElementById("total-cost").blur();
+        console.log("total cost got focused, gonna blur!");
+        totalCost.blur();
     });
+
 });
+
+function setTwoNumberDecimal(event) {
+    this.value = parseFloat(this.value).toFixed(2);
+}
