@@ -90,7 +90,7 @@
                     <div class="ui input focus">
                         <div class="field">
                             <div class="ui pointing below red basic label" id="apples-error" required>
-                                Please enter a numeric value! e.g 1,2,3...
+                                Please enter a valid numeric value! e.g 1,2,3...
                             </div>
                             <input type="text" placeholder="10" id="apples-input">
                         </div>
@@ -112,7 +112,7 @@
                     <div class="ui input focus">
                         <div class="field">
                             <div class="ui pointing below red basic label" id="oranges-error">
-                                Please enter a numeric value! e.g 1,2,3...
+                                Please enter a valid numeric value! e.g 1,2,3...
                             </div>
                             <input type="text" placeholder="10" id="oranges-input" required>
                         </div>
@@ -134,7 +134,7 @@
                     <div class="ui input focus">
                         <div class="field">
                             <div class="ui pointing below red basic label" id="bananas-error">
-                                Please enter a numeric value! e.g 1,2,3...
+                                Please enter a valid numeric value! e.g 1,2,3...
                             </div>
                             <input type="text" placeholder="10" id="bananas-input" required>
                         </div>
@@ -155,23 +155,12 @@
                         </div>
                         <div class="inline">
                             <div class="ui input">
-                                <input type="text" placeholder="0">
+                                <input type="text" placeholder="0" id="total-cost">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!--<div class="ui stacked center aligned placeholder blue segment">-->
-            <!--<div class="ui icon header">-->
-            <!--<i class="money bill alternate outline icon"></i>-->
-            <!--Total Cost:-->
-            <!--</div>-->
-            <!--<div class="inline">-->
-            <!--<div class="ui input">-->
-            <!--<input type="text" placeholder="0">-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
         </div>
         <!--end of showing total cost-->
     </div>
@@ -184,19 +173,19 @@
             <label>Payment Method</label>
             <div class="field">
                 <div class="ui radio checkbox">
-                    <input type="radio" name="frequency" checked="checked">
+                    <input type="radio" name="payment" checked="checked">
                     <label>Visa</label>
                 </div>
             </div>
             <div class="field">
                 <div class="ui radio checkbox">
-                    <input type="radio" name="frequency">
+                    <input type="radio" name="payment">
                     <label>Mastercard</label>
                 </div>
             </div>
             <div class="field">
                 <div class="ui radio checkbox">
-                    <input type="radio" name="frequency">
+                    <input type="radio" name="payment">
                     <label>Discover</label>
                 </div>
             </div>
