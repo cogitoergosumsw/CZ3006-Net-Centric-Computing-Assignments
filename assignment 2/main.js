@@ -84,7 +84,7 @@ $(document).ready(function () {
 
 });
 
-
+// callback function to validate the form data
 const form = document.querySelector('form');
 form.addEventListener('submit', event => {
     // check if the form has invalid input from the value of Total Cost element
@@ -99,6 +99,7 @@ form.addEventListener('submit', event => {
 
 });
 
+// function to close error dialog modal
 function closeModal() {
     $('.modal')
         .modal('hide')
