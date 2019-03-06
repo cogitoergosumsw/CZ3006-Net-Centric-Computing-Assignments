@@ -13,6 +13,7 @@
 // declare the file name
 $file_name = "order.txt";
 
+// initialise the variables
 $total_apples = 0;
 $total_oranges = 0;
 $total_bananas = 0;
@@ -31,6 +32,7 @@ if ($file_data != "") {
     preg_match("/Total number of oranges: (\d+)/", $file_data, $num_oranges);
     preg_match("/Total number of bananas: (\d+)/", $file_data, $num_bananas);
 
+    // get integer values of the existing file data
     $total_apples = intval($num_apples[1]);
     $total_oranges = intval($num_oranges[1]);
     $total_bananas = intval($num_bananas[1]);
@@ -95,7 +97,8 @@ fclose($file);
                 $orange_cost = 0.59;
                 $banana_cost = 0.39;
 
-                //computing total cost from number of fruits
+                // computing total cost from number of fruits
+                // by multiplying the cost of each fruit with the units of the respective fruits
                 $total_cost =
                     $apple_cost * $_POST['apples-input'] +
                     $orange_cost * $_POST['oranges-input'] +
