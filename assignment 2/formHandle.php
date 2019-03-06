@@ -104,8 +104,10 @@ fclose($file);
                     $orange_cost * $_POST['oranges-input'] +
                     $banana_cost * $_POST['bananas-input'];
 
+                // round up the value
+                $total_cost = round($total_cost, 2);
                 // write the value to DOM
-                echo($total_cost);
+                echo number_format((float)$total_cost, 2, '.', '');
                 ?>
             </div>
         </div>
