@@ -35,6 +35,20 @@
         $total_oranges = intval($num_oranges[1]);
         $total_bananas = intval($num_bananas[1]);
     }
+
+    // take the newly added values of apples, oranges and bananas
+    // and add them to the values stored in the order.txt file
+    $total_apples = (int)$total_apples + (int)$_POST['apples-input'];
+    $total_oranges = (int)$total_oranges + (int)$_POST['oranges-input'];
+    $total_bananas = (int)$total_bananas + (int)$_POST['bananas-input'];
+
+    // write the new values of apples, oranges and bananas to the file
+    $file_content = "Total number of apples: " . ($total_apples) . "\r\n";
+    $file_content .= "Total number of oranges: " . ($total_oranges) . "\r\n";
+    $file_content .= "Total number of bananas: " .($total_bananas) . "\r\n";
+    fwrite($file, $file_content);
+
+    fclose($file);
 ?>
 <div class="ui hidden divider"></div>
 <div class="ui container">
