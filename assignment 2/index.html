@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>CZ3006 Net Centric Computing Assignment 2</title>
+
+    <!--setting up the peripheral CSS files for beautifying the page-->
     <link rel="stylesheet" type="text/css" href="styles/semantic-css/semantic.min.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
@@ -108,9 +110,7 @@
                 </div>
 
                 <!--end of keying in num. of apples-->
-                <div class="ui vertical divider">
-
-                </div>
+                <div class="ui vertical divider"></div>
                 <!--start of keying in num. of oranges-->
                 <div class="column">
                     <div class="ui raised orange padded center aligned segment">
@@ -211,8 +211,25 @@
             <button class="ui button" type="submit" name="submitButton" id="submitButton">Submit</button>
         </div>
     </div>
-
+    <div class="ui hidden divider"></div>
 </form>
+
+<!--error dialog display-->
+<div class="ui modal">
+    <i class="close icon"></i>
+    <div class="header">
+        Invalid Form Submission
+    </div>
+    <div class="image content">
+        <div class="description">
+            Please check the input before submitting form. <br>
+            <p>Values of the fruits input should only be of numeric input e.g 1,2,3... </p>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui button" onclick="closeModal()">OK</div>
+    </div>
+</div>
 
 <!--<div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a-->
 <!--href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a-->

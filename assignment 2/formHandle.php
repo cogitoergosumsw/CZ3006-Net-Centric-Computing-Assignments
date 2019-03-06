@@ -10,45 +10,46 @@
 
 <body>
 <?php
-    // declare the file name
-    $file_name = "order.txt";
+// declare the file name
+$file_name = "order.txt";
 
-    $total_apples = 0;
-    $total_oranges = 0;
-    $total_bananas = 0;
+$total_apples = 0;
+$total_oranges = 0;
+$total_bananas = 0;
 
-    // open file on server
-    // throw exception when there's an error opening the file
-    $file = fopen($file_name, "c+") or die ("Error opening file!");
+// open file on server
+// throw exception when there's an error opening the file
+$file = fopen($file_name, "c+") or die ("Error opening file!");
 
-    // read data in the file
-    $file_data = file_get_contents($file_name);
+// read data in the file
+$file_data = file_get_contents($file_name);
 
-    // check if the file contains any data
-    if ($file_data != "") {
-        // match the values of the number of apples, oranges and bananas correspondingly
-        preg_match("/Total number of apples: (\d+)/", $file_data, $num_apples);
-        preg_match("/Total number of oranges: (\d+)/", $file_data, $num_oranges);
-        preg_match("/Total number of bananas: (\d+)/", $file_data, $num_bananas);
+// check if the file contains any data
+if ($file_data != "") {
+    // match the values of the number of apples, oranges and bananas correspondingly
+    preg_match("/Total number of apples: (\d+)/", $file_data, $num_apples);
+    preg_match("/Total number of oranges: (\d+)/", $file_data, $num_oranges);
+    preg_match("/Total number of bananas: (\d+)/", $file_data, $num_bananas);
 
-        $total_apples = intval($num_apples[1]);
-        $total_oranges = intval($num_oranges[1]);
-        $total_bananas = intval($num_bananas[1]);
-    }
+    $total_apples = intval($num_apples[1]);
+    $total_oranges = intval($num_oranges[1]);
+    $total_bananas = intval($num_bananas[1]);
+}
 
-    // take the newly added values of apples, oranges and bananas
-    // and add them to the values stored in the order.txt file
-    $total_apples = (int)$total_apples + (int)$_POST['apples-input'];
-    $total_oranges = (int)$total_oranges + (int)$_POST['oranges-input'];
-    $total_bananas = (int)$total_bananas + (int)$_POST['bananas-input'];
+// take the newly added values of apples, oranges and bananas
+// and add them to the values stored in the order.txt file
+$total_apples = (int)$total_apples + (int)$_POST['apples-input'];
+$total_oranges = (int)$total_oranges + (int)$_POST['oranges-input'];
+$total_bananas = (int)$total_bananas + (int)$_POST['bananas-input'];
 
-    // write the new values of apples, oranges and bananas to the file
-    $file_content = "Total number of apples: " . ($total_apples) . "\r\n";
-    $file_content .= "Total number of oranges: " . ($total_oranges) . "\r\n";
-    $file_content .= "Total number of bananas: " .($total_bananas) . "\r\n";
-    fwrite($file, $file_content);
+// write the new values of apples, oranges and bananas to the file
+$file_content = "Total number of apples: " . ($total_apples) . "\r\n";
+$file_content .= "Total number of oranges: " . ($total_oranges) . "\r\n";
+$file_content .= "Total number of bananas: " . ($total_bananas) . "\r\n";
+fwrite($file, $file_content);
 
-    fclose($file);
+// close the file
+fclose($file);
 ?>
 <div class="ui hidden divider"></div>
 <div class="ui container">
@@ -99,7 +100,9 @@
                     $apple_cost * $_POST['apples-input'] +
                     $orange_cost * $_POST['oranges-input'] +
                     $banana_cost * $_POST['bananas-input'];
-                echo ($total_cost);
+
+                // write the value to DOM
+                echo($total_cost);
                 ?>
             </div>
         </div>

@@ -1,9 +1,3 @@
-$('.ui.sticky')
-    .sticky({
-        context: '#fruits-selection'
-    })
-;
-
 var applesInput = document.getElementById('apples-input');
 var orangesInput = document.getElementById('oranges-input');
 var bananasInput = document.getElementById('bananas-input');
@@ -21,10 +15,19 @@ var totalCost = document.getElementById('total-cost');
 var total = 0;
 
 $(document).ready(function () {
+
+    // initialize error dialog for invalid form submission
+    $('.ui.modal')
+        .modal()
+    ;
+
+    // hide the error messages of invalid input upon loading of website
     $('#apples-error').hide();
     $('#oranges-error').hide();
     $('#bananas-error').hide();
 
+    // add an event listener to the Apples input
+    // to check for any input from user
     applesInput.addEventListener("input", function (evt) {
         if (isNaN(this.value)) {
             $('#apples-error').show();
@@ -38,6 +41,9 @@ $(document).ready(function () {
             $('#apples-error').hide();
         }
     });
+
+    // add an event listener to the Oranges input
+    // to check for any input from user
     orangesInput.addEventListener("input", function (evt) {
         if (isNaN(this.value)) {
             totalCost.value = "NaN";
@@ -51,6 +57,9 @@ $(document).ready(function () {
             $('#oranges-error').hide();
         }
     });
+
+    // add an event listener to the Bananas input
+    // to check for any input from user
     bananasInput.addEventListener("input", function (evt) {
         if (isNaN(this.value)) {
             totalCost.value = "NaN";
@@ -66,6 +75,7 @@ $(document).ready(function () {
         }
     });
 
+    // add an event listener to the Total Cost text input field
     // blur the Total Cost text input field whenever it got focused
     totalCost.addEventListener("focus", function (evt) {
         console.log("total cost got focused, gonna blur!");
@@ -73,3 +83,24 @@ $(document).ready(function () {
     });
 
 });
+
+
+const form = document.querySelector('form');
+form.addEventListener('submit', event => {
+    // check if the form has invalid input from the value of Total Cost element
+    if (totalCost.value == "NaN") {
+        // validate the form submission
+        console.log('Form submission cancelled.');
+        event.preventDefault();
+        $('.modal')
+            .modal('show')
+        ;
+    }
+
+});
+
+function closeModal() {
+    $('.modal')
+        .modal('hide')
+    ;
+}
