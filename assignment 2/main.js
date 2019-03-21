@@ -29,7 +29,7 @@ $(document).ready(function () {
     // add an event listener to the Apples input
     // to check for any input from user
     applesInput.addEventListener("input", function (evt) {
-        if (isNaN(this.value)) {
+        if (validInput(this.value)) {
             $('#apples-error').show();
             totalCost.value = "NaN";
         } else {
@@ -45,13 +45,14 @@ $(document).ready(function () {
     // add an event listener to the Oranges input
     // to check for any input from user
     orangesInput.addEventListener("input", function (evt) {
-        if (isNaN(this.value)) {
+        if (validInput(this.value)) {
             totalCost.value = "NaN";
             $('#oranges-error').show();
         } else {
             total = ((this.value) * orangeCost) + (applesInput.value * appleCost) + (bananasInput.value * bananaCost);
             total = parseFloat(total).toFixed(2);
             if (!isNaN(applesInput.value) && !isNaN(bananasInput.value)) {
+				console.log("check oranges");
                 totalCost.value = total;
             }
             $('#oranges-error').hide();
@@ -61,7 +62,7 @@ $(document).ready(function () {
     // add an event listener to the Bananas input
     // to check for any input from user
     bananasInput.addEventListener("input", function (evt) {
-        if (isNaN(this.value)) {
+        if (validInput(this.value)) {
             totalCost.value = "NaN";
             $('#bananas-error').show();
         } else {
@@ -88,7 +89,7 @@ $(document).ready(function () {
 const form = document.querySelector('form');
 form.addEventListener('submit', event => {
     // check if the form has invalid input from the value of Total Cost element
-    if (totalCost.value == "NaN") {
+    if (totalCost.value == "NaN" || totalCost.value == 0 || validInput(applesInput.value) || validInput(orangesInput.value) || validInput(bananasInput.value)) {
         // validate the form submission
         console.log('Form submission cancelled.');
         event.preventDefault();
@@ -105,3 +106,16 @@ function closeModal() {
         .modal('hide')
     ;
 }
+
+function isAnInteger(x) {
+    return x % 1 === 0;
+}
+
+function validInput(x) {
+	if (isNaN(x)|| x < 0 || !(isAnInteger(x))) {
+		return true;
+	}
+	return false;
+}
+
+

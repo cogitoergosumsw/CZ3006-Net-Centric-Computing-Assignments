@@ -99,10 +99,10 @@
                         <div class="inline">
                             <div class="ui input focus">
                                 <div class="field">
-                                    <div class="ui pointing below red basic label" id="apples-error" required>
+                                    <div class="ui pointing below red basic label" id="apples-error">
                                         Please enter a valid numeric value! e.g 1,2,3...
                                     </div>
-                                    <input type="text" placeholder="10" name="apples-input" id="apples-input">
+                                    <input type="text" placeholder="10" name="apples-input" id="apples-input" required>
                                 </div>
                             </div>
                         </div>
@@ -225,7 +225,8 @@
     <div class="image content">
         <div class="description">
             Please check the input before submitting form. <br>
-            <p>Values of the fruits input should only be of numeric input e.g 1,2,3... </p>
+            <p>Values of the fruits input should only be of numeric whole number e.g 1,2,3... </p>
+			<p>Form should not be an empty order submission.
         </div>
     </div>
     <div class="actions">

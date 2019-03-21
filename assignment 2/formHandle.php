@@ -113,6 +113,10 @@ fclose($file);
         </div>
         <h3 class="ui">Your preferred mode of payment is <u><?php echo $_POST['payment'] ?></u>.</h3>
     </div>
+	<button onclick="window.history.back();" class="ui left labeled icon button blue basic">
+		<i class="left arrow icon"></i>
+		Back
+	</button>
 </div>
 
 
