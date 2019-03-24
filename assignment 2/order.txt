@@ -1,3 +1,3 @@
-Total number of apples: 53
-Total number of oranges: 289
-Total number of bananas: 122
+Total number of apples: 0
+Total number of oranges: 0
+Total number of bananas: 0
